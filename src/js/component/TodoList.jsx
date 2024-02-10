@@ -10,7 +10,7 @@ const TodoList = () => {
 		{id: 1, description: "Wash my hands"},
 		{id: 2 , description: "Eat"},
 		{id: 3, description: "Walk the dog"}]);
-
+	
 	const [newTodo, setNewTodo] = useState('');
 	
 	const handlerSummitTask = (e) => {
@@ -56,20 +56,22 @@ const TodoList = () => {
 				<div className="row mt-4">
 					<div className="col"/>
 					<div className="col-8 paper">
-						{
-							todoList.map(todo => (
-								<>
-								<Todo
-									key={todo.id}
-									todo={todo}
-									todoList={todoList}
-									setTodoList={setTodoList}
-									handlerDelete={handlerDelete}
-									handlerEdit={handlerEdit}
-								/>
-								<hr className="border border-danger border-2 opacity-50"></hr>
-								</>
-							))
+						{ todoList.length > 0
+							?
+								todoList.map(todo => (
+									<>
+									<Todo
+										key={todo.id}
+										todo={todo}
+										todoList={todoList}
+										setTodoList={setTodoList}
+										handlerDelete={handlerDelete}
+										handlerEdit={handlerEdit}
+									/>
+									<hr className="border border-danger border-2 opacity-50"></hr>
+									</>
+								))
+							: <p>"No tasks, add a task"</p>
 						}
 					</div>
 					<div className="col"/>
