@@ -4,15 +4,13 @@ import { X } from 'react-bootstrap-icons';
 
 
 //create your first component
-const Todo = () => {
+const Todo = ({description}) => {
 
-	const [todo, setTodo] = useState('');
+	const [todo, setTodo] = useState(description);
+    
 
 
-	return <div class="row">
-                <div class="col"/>
-                <div class="col-8">
-                    <div className="input-group mb-3">
+	return <div className="input-group mb-3 pt-2">
                         <input type="text" 
                                 className="form-control border border-0 fs-3" 
                                 placeholder="Write a to-do..." 
@@ -22,7 +20,7 @@ const Todo = () => {
                                 value={todo}
                         />
                         {
-                            todo !== "" ?
+                            description !== "" ?
                                 <button className="btn btn-outline-light border border-0"
                                     type="button"
                                     id="button-addon2"
@@ -32,10 +30,9 @@ const Todo = () => {
                                 :
                             null
                         }	
-                    </div>
-                </div>
-                <div class="col"/>
+                        <br/>
             </div>
+             
 };
 
 export default Todo;
