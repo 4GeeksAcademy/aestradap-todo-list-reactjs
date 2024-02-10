@@ -43,19 +43,19 @@ const TodoList = () => {
 			<h1 className="text-center mt-5">TO-DOS</h1>
 			<div className="container text-center">
 				
-					<input type="text" 
-								className="form-control border border-0 fs-3" 
-								placeholder="Write a to-do..." 
-								aria-label="Recipient's username"
-								aria-describedby="button-addon2"
-								onChange={ e => setNewTodo(e.target.value)}
-								onKeyDown={e => handlerSummitTask(e)}
-								value={newTodo}
-							/>
+				<input type="text" 
+							className="form-control border border-0 fs-3" 
+							placeholder="Write a to-do..." 
+							aria-label="Recipient's username"
+							aria-describedby="button-addon2"
+							onChange={ e => setNewTodo(e.target.value)}
+							onKeyDown={e => handlerSummitTask(e)}
+							value={newTodo}
+						/>
 				
-				<div className="row">
+				<div className="row mt-4">
 					<div className="col"/>
-					<div className="col-8">
+					<div className="col-8 paper">
 						{
 							todoList.map(todo => (
 								<>
