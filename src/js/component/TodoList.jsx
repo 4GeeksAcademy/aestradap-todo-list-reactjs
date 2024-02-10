@@ -55,7 +55,7 @@ const TodoList = () => {
 				
 				<div className="row mt-4">
 					<div className="col"/>
-					<div className="col-8 paper">
+					<div className="col-8 paper py-2">
 						{ todoList.length > 0
 							?
 								todoList.map(todo => (
@@ -73,8 +73,17 @@ const TodoList = () => {
 								))
 							: <p>"No tasks, add a task"</p>
 						}
+						{
+							todoList.length > 0
+							? <div className="d-flex justify-content-start">
+									<p className="my-2" style={{color:'rgb(108,117,125)'}}>{todoList.length} item left</p>
+								</div>	
+							:null
+						}
+						
 					</div>
 					<div className="col"/>
+				
 				</div>
 	
 			</div>	
