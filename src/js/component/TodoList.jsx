@@ -76,7 +76,11 @@ const TodoList = () => {
 						{
 							todoList.length > 0
 							? <div className="d-flex justify-content-start">
-									<p className="my-2" style={{color:'rgb(108,117,125)'}}>{todoList.length} item left</p>
+									<p className="my-2" 
+										style={{color:'rgb(108,117,125)'}}
+									>
+										{todoList.length} item left
+									</p>
 								</div>	
 							:null
 						}

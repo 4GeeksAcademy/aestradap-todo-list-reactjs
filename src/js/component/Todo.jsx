@@ -27,11 +27,10 @@ const Todo = ({todo, setTodoList, handlerEdit, handlerDelete}) => {
                         <input type="text" 
                                 className="form-control border border-0 fs-3" 
                                 placeholder="Write a to-do..." 
-                                aria-label="Recipient's username"
-                                aria-describedby="button-addon2"
                                 onChange={e => setMyTodo( e.target.value )}
                                 value={myTodo}
                         />
+                       
                         {
                             description !== myTodo
                             ? <button className="btn btn-outline-light border border-0"
@@ -43,7 +42,7 @@ const Todo = ({todo, setTodoList, handlerEdit, handlerDelete}) => {
                                 </button> 
                             : null 
                         }
-                       
+                    
                         {
                             description !== ""  ?
                                 <button className="btn btn-outline-light  border border-0 mx-10"
@@ -55,13 +54,14 @@ const Todo = ({todo, setTodoList, handlerEdit, handlerDelete}) => {
                                     {isHovering &&  
                                         
                                             <X color="red" size={42} />
-                                       
+                                    
                                     }
-                                   
+                                
                                 </button> 
                                 :
                             null
                         }	
+                        
                         <br/>
             </div>
              
