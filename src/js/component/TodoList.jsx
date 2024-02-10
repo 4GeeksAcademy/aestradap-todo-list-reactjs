@@ -5,18 +5,38 @@ import Todo from './Todo';
 
 //create your first component
 const TodoList = () => {
-	const [todoList, setTodoList] = useState(["Make the Bed ", "Wash my hands", "Eat", "Walk the dog"]);
+	const [todoList, setTodoList] = useState([
+		{id: 0 , description: "Make the Bed "},
+		{id: 1, description: "Wash my hands"},
+		{id: 2 , description: "Eat"},
+		{id: 3, description: "Walk the dog"}]);
+
 	const [newTodo, setNewTodo] = useState('');
 	
 	const handlerSummitTask = (e) => {
 		if (e.key === "Enter"){
 			setTodoList([
 				...todoList,
-				newTodo
+				{
+					id: todoList.length,
+					description:newTodo
+				}
 			]);
 			setNewTodo('');
 		}
 	}
+
+	const handlerEdit = (id, description) => {
+		console.log(id,description)
+        let newList = [...todoList];
+		newList[id] = {id:id, description: description};
+		setTodoList(newList);
+    }
+
+	const handlerDelete = (id) => {
+		const newList = todoList.filter(todo => todo.id != id)
+        setTodoList(newList);
+    }
 
 	return (
 		<div className="text-center">
@@ -37,17 +57,20 @@ const TodoList = () => {
 					<div className="col"/>
 					<div className="col-8">
 						{
-							todoList.map((todo, key) => (
+							todoList.map(todo => (
 								<>
 								<Todo
-									key={key}
-									description={todo}
+									key={todo.id}
+									todo={todo}
+									todoList={todoList}
+									setTodoList={setTodoList}
+									handlerDelete={handlerDelete}
+									handlerEdit={handlerEdit}
 								/>
-								<hr class="border border-danger border-2 opacity-50"></hr>
+								<hr className="border border-danger border-2 opacity-50"></hr>
 								</>
 							))
 						}
-						
 					</div>
 					<div className="col"/>
 				</div>
