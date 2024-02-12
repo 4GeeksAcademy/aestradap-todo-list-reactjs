@@ -31,3 +31,10 @@
 
 
   
+  .notdisplayed {
+    display: none;
+  }
+  
+  .displayed {
+    display: flex;
+  }

@@ -1,10 +1,8 @@
 import React, { useState, useRef } from "react";
 import Todo from './Todo';
 
-
-
-//create your first component
 const TodoList = () => {
+	
 	const [todoList, setTodoList] = useState([
 		{id: 0 , description: "Make the Bed "},
 		{id: 1, description: "Wash my hands"},
@@ -84,12 +82,9 @@ const TodoList = () => {
 								</div>	
 							:null
 						}
-						
 					</div>
 					<div className="col"/>
-				
 				</div>
-	
 			</div>	
 		</div>
 	);

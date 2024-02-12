@@ -9,16 +9,16 @@ export const HoverableDiv = ({ handleMouseOver, handleMouseOut }) => {
   );
 };
 
-// const HoverText = () => {
-//   return (
-//     <div>
-//       Hovering right meow!
-//       <span role="img" aria-label="cat">
-//         🐱
-//       </span>
-//     </div>
-//   );
-// };
+const HoverText = () => {
+  return (
+    <div>
+      Hovering right meow!
+      <span role="img" aria-label="cat">
+        🐱
+      </span>
+    </div>
+  );
+};
 
 const HoverExample = () => {
   const [isHovering, setIsHovering] = useState(false);
